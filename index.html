@@ -1,1 +1,1279 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mataram Stay Residence — Kost & Penginapan Premium di Mataram, NTB</title>
+    <meta name="description" content="Kost eksklusif & penginapan terbaik dengan fasilitas bintang lima di kota Mataram, Nusa Tenggara Barat.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: '#F6D365',
+                        coral: '#FDA085',
+                        peach: '#FEC89A',
+                        cream: '#FFF8F0',
+                        navy: '#1a1a2e',
+                        charcoal: '#16213e',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .font-heading { font-family: 'Playfair Display', serif; }
+        .gradient-bg { background: linear-gradient(135deg, #F6D365 0%, #FDA085 50%, #FEC89A 100%); }
+        .gradient-text { background: linear-gradient(135deg, #F6D365, #FDA085); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .glass { background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.25); }
+        .glass-dark { background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
+        .hero-overlay { background: linear-gradient(135deg, rgba(26,26,46,0.7) 0%, rgba(253,160,133,0.3) 50%, rgba(246,211,101,0.2) 100%); }
+        .navbar-scrolled { background: rgba(255,255,255,0.95) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        .particle { position: absolute; border-radius: 50%; background: rgba(246,211,101,0.6); animation: float linear infinite; pointer-events: none; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; } }
+        @keyframes typewriter { from { width: 0 } to { width: 100% } }
+        @keyframes blink { 50% { border-color: transparent } }
+        .typewriter { overflow: hidden; white-space: nowrap; border-right: 3px solid #F6D365; animation: typewriter 3s steps(40) 1s forwards, blink 0.7s step-end infinite; width: 0; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { animation: fadeInUp 1s ease forwards; }
+        .fade-in-up-delay-1 { animation: fadeInUp 1s ease 0.3s forwards; opacity: 0; }
+        .fade-in-up-delay-2 { animation: fadeInUp 1s ease 0.6s forwards; opacity: 0; }
+        .fade-in-up-delay-3 { animation: fadeInUp 1s ease 0.9s forwards; opacity: 0; }
+        .masonry-grid { columns: 3; column-gap: 16px; }
+        .masonry-grid > div { break-inside: avoid; margin-bottom: 16px; }
+        @media (max-width: 768px) { .masonry-grid { columns: 2; } }
+        @media (max-width: 480px) { .masonry-grid { columns: 1; } }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; justify-content: center; align-items: center; }
+        .lightbox.active { display: flex; }
+        .wa-float { animation: pulse-wa 2s infinite; }
+        @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+        .social-proof { animation: slideIn 0.5s ease, slideOut 0.5s ease 4.5s forwards; }
+        @keyframes slideIn { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(-100%); opacity: 0; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#F6D365, #FDA085); border-radius: 10px; }
+        .booking-modal { display: none; }
+        .booking-modal.active { display: flex; }
+        input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px rgba(246,211,101,0.4); }
+    </style>
+</head>
+<body class="bg-cream font-body text-gray-800">
 
+    <!-- ═══════════════════════════════════════ -->
+    <!-- NAVBAR -->
+    <!-- ═══════════════════════════════════════ -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                        <i class="fas fa-hotel text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-xl text-white" id="nav-brand">Mataram Stay</span>
+                        <span class="block text-[10px] text-white/70 tracking-widest uppercase" id="nav-tagline">Residence</span>
+                    </div>
+                </a>
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#beranda" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm" data-text="Beranda">Beranda</a>
+                    <a href="#tentang" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Tentang</a>
+                    <a href="#kamar" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Kamar</a>
+                    <a href="#fasilitas" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Fasilitas</a>
+                    <a href="#galeri" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Galeri</a>
+                    <a href="#booking" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Booking</a>
+                    <a href="#kontak" class="nav-link text-white/90 hover:text-gold transition font-medium text-sm">Kontak</a>
+                    <a href="#booking" class="gradient-bg text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-calendar-check mr-1"></i> Booking
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl shadow-2xl rounded-b-3xl">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#beranda" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Beranda</a>
+                <a href="#tentang" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Tentang</a>
+                <a href="#kamar" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Kamar</a>
+                <a href="#fasilitas" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Fasilitas</a>
+                <a href="#galeri" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Galeri</a>
+                <a href="#booking" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Booking</a>
+                <a href="#kontak" class="block py-2 text-gray-700 hover:text-coral font-medium mobile-link">Kontak</a>
+                <a href="#booking" class="block gradient-bg text-white text-center py-3 rounded-xl font-semibold mobile-link">Booking Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 1: HERO -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="beranda" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&q=80" alt="Mataram Stay Residence" class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        <!-- Particles -->
+        <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div class="text-white">
+                    <div class="fade-in-up">
+                        <span class="inline-block gradient-bg text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6">
+                            ✨ Kost & Penginapan Premium #1 di Mataram
+                        </span>
+                    </div>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 fade-in-up-delay-1">
+                        Temukan Kenyamanan<br>
+                        <span class="gradient-text">Premium</span> di Jantung<br>
+                        Mataram
+                    </h1>
+                    <p class="text-lg text-white/80 mb-8 max-w-lg fade-in-up-delay-2 leading-relaxed">
+                        Kost eksklusif & penginapan terbaik dengan fasilitas bintang lima. Lokasi strategis dekat kampus, pusat bisnis, dan destinasi wisata Lombok.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-10 fade-in-up-delay-3">
+                        <a href="#booking" class="gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-gold/40 transition-all duration-300 transform hover:scale-105 flex items-center">
+                            <i class="fas fa-calendar-check mr-2"></i> Booking Sekarang
+                        </a>
+                        <a href="#kamar" class="border-2 border-white/50 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center">
+                            <i class="fas fa-bed mr-2"></i> Lihat Kamar
+                        </a>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-6 fade-in-up-delay-3">
+                        <div class="flex items-center gap-2 glass px-4 py-2 rounded-full">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="text-sm font-semibold">4.9 Rating</span>
+                        </div>
+                        <div class="flex items-center gap-2 glass px-4 py-2 rounded-full">
+                            <i class="fas fa-trophy text-yellow-400"></i>
+                            <span class="text-sm font-semibold">500+ Tamu Puas</span>
+                        </div>
+                        <div class="flex items-center gap-2 glass px-4 py-2 rounded-full">
+                            <i class="fas fa-map-marker-alt text-yellow-400"></i>
+                            <span class="text-sm font-semibold">Lokasi Strategis</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right: Booking Widget -->
+                <div class="fade-in-up-delay-2" data-aos="fade-left">
+                    <div class="glass-dark rounded-3xl p-8 shadow-2xl">
+                        <h3 class="font-heading text-2xl font-bold text-gray-800 mb-2">Cek Ketersediaan</h3>
+                        <p class="text-gray-500 text-sm mb-6">Pesan kamar impian Anda sekarang</p>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-sm font-semibold text-gray-600 mb-1 block"><i class="fas fa-calendar-alt text-coral mr-1"></i> Check-in</label>
+                                <input type="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-coral transition" id="hero-checkin">
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-600 mb-1 block"><i class="fas fa-calendar-alt text-coral mr-1"></i> Check-out</label>
+                                <input type="date" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-coral transition" id="hero-checkout">
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-600 mb-1 block"><i class="fas fa-users text-coral mr-1"></i> Jumlah Tamu</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-coral transition">
+                                    <option>1 Tamu</option>
+                                    <option>2 Tamu</option>
+                                    <option>3 Tamu</option>
+                                    <option>4 Tamu</option>
+                                    <option>5+ Tamu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-600 mb-1 block"><i class="fas fa-bed text-coral mr-1"></i> Tipe Kamar</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-coral transition">
+                                    <option>Semua Tipe</option>
+                                    <option>Standard Room</option>
+                                    <option>Deluxe Room</option>
+                                    <option>Premium Suite</option>
+                                    <option>Family Room</option>
+                                </select>
+                            </div>
+                            <a href="#booking" class="block w-full gradient-bg text-white text-center py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-gold/30 transition-all duration-300 transform hover:scale-[1.02]">
+                                <i class="fas fa-search mr-2"></i> Cari Kamar Tersedia
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <a href="#tentang" class="text-white/60 hover:text-white transition">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 2: TENTANG KAMI -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="tentang" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Images -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Exterior" class="rounded-2xl shadow-xl w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=80" alt="Lobby" class="rounded-2xl shadow-xl w-full h-64 object-cover mt-8">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80" alt="Pool" class="rounded-2xl shadow-xl w-full h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&q=80" alt="Staff" class="rounded-2xl shadow-xl w-full h-64 object-cover mt-8">
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 lg:right-auto lg:-left-6 gradient-bg text-white rounded-2xl p-6 shadow-2xl">
+                        <div class="text-4xl font-bold font-heading">5+</div>
+                        <div class="text-sm font-medium">Tahun<br>Pengalaman</div>
+                    </div>
+                </div>
+                <!-- Right: Content -->
+                <div data-aos="fade-left">
+                    <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Tentang Kami</span>
+                    <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 mb-6 text-gray-900">
+                        Hunian <span class="gradient-text">Nyaman</span> untuk Semua Kebutuhan Anda
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>Mataram Stay Residence</strong> berdiri sejak 2020, berlokasi strategis di pusat Kota Mataram, Nusa Tenggara Barat. Kami menyediakan hunian premium untuk mahasiswa, pekerja profesional, wisatawan, dan keluarga.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Berdekatan dengan Masjid Raya Hubbul Wathan Islamic Center, Mataram Mall, Universitas Mataram (UNRAM), dan hanya 25 menit ke Pantai Senggigi. Nikmati kenyamanan kelas atas dengan harga terjangkau.
+                    </p>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                        <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="text-3xl font-bold gradient-text font-heading counter" data-target="50">0</div>
+                            <div class="text-sm text-gray-500 mt-1">Kamar Tersedia</div>
+                        </div>
+                        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="text-3xl font-bold gradient-text font-heading counter" data-target="2000">0</div>
+                            <div class="text-sm text-gray-500 mt-1">Tamu Bahagia</div>
+                        </div>
+                        <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="text-3xl font-bold gradient-text font-heading counter" data-target="5">0</div>
+                            <div class="text-sm text-gray-500 mt-1">Tahun Pengalaman</div>
+                        </div>
+                        <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="text-3xl font-bold gradient-text font-heading">4.9</div>
+                            <div class="text-sm text-gray-500 mt-1">Rating Google</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 3: TIPE KAMAR -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="kamar" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Pilihan Kamar</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Temukan Kamar <span class="gradient-text">Sempurna</span> Anda
+                </h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Berbagai tipe kamar dengan fasilitas lengkap untuk memenuhi setiap kebutuhan dan budget Anda.</p>
+            </div>
+            <!-- Room Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Standard -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard Room" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-700">Standard</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-gray-900">Standard Room</h3>
+                        <div class="flex items-baseline gap-1 mt-2 mb-4">
+                            <span class="text-2xl font-bold gradient-text">Rp150.000</span>
+                            <span class="text-gray-400 text-sm">/malam</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-4">Rp 1.500.000/bulan</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-snowflake text-coral text-xs"></i> AC</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-wifi text-coral text-xs"></i> WiFi</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-bath text-coral text-xs"></i> Kamar Mandi Dalam</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-tv text-coral text-xs"></i> TV</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-desk text-coral text-xs"></i> Meja Kerja</div>
+                        </div>
+                        <a href="#booking" class="block w-full text-center py-3 rounded-xl border-2 border-coral text-coral font-semibold hover:bg-coral hover:text-white transition-all duration-300">
+                            Booking Kamar Ini
+                        </a>
+                    </div>
+                </div>
+                <!-- Deluxe -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 z-10 gradient-bg text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">⭐ POPULER</div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80" alt="Deluxe Room" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-700">Deluxe</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-gray-900">Deluxe Room</h3>
+                        <div class="flex items-baseline gap-1 mt-2 mb-4">
+                            <span class="text-2xl font-bold gradient-text">Rp250.000</span>
+                            <span class="text-gray-400 text-sm">/malam</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-4">Rp 2.500.000/bulan</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-snowflake text-coral text-xs"></i> AC</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-wifi text-coral text-xs"></i> WiFi</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-hot-tub text-coral text-xs"></i> Water Heater</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-door-open text-coral text-xs"></i> Balkon</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-tv text-coral text-xs"></i> Smart TV</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-ice-cream text-coral text-xs"></i> Kulkas Mini</div>
+                        </div>
+                        <a href="#booking" class="block w-full text-center py-3 rounded-xl gradient-bg text-white font-semibold hover:shadow-lg hover:shadow-gold/30 transition-all duration-300">
+                            Booking Kamar Ini
+                        </a>
+                    </div>
+                </div>
+                <!-- Premium -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d955f4e24?w=600&q=80" alt="Premium Suite" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-700">Premium</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-gray-900">Premium Suite</h3>
+                        <div class="flex items-baseline gap-1 mt-2 mb-4">
+                            <span class="text-2xl font-bold gradient-text">Rp400.000</span>
+                            <span class="text-gray-400 text-sm">/malam</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-4">Rp 4.000.000/bulan</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-coral text-xs"></i> Semua Fasilitas Deluxe</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-couch text-coral text-xs"></i> Living Area</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-utensils text-coral text-xs"></i> Dapur Mini</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-tv text-coral text-xs"></i> Smart TV 50"</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-coffee text-coral text-xs"></i> Breakfast Included</div>
+                        </div>
+                        <a href="#booking" class="block w-full text-center py-3 rounded-xl border-2 border-coral text-coral font-semibold hover:bg-coral hover:text-white transition-all duration-300">
+                            Booking Kamar Ini
+                        </a>
+                    </div>
+                </div>
+                <!-- Family -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Family Room" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-700">Family</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-xl font-bold text-gray-900">Family Room</h3>
+                        <div class="flex items-baseline gap-1 mt-2 mb-4">
+                            <span class="text-2xl font-bold gradient-text">Rp500.000</span>
+                            <span class="text-gray-400 text-sm">/malam</span>
+                        </div>
+                        <p class="text-gray-400 text-xs mb-4">Rp 5.000.000/bulan</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-check-circle text-coral text-xs"></i> Semua Fasilitas Premium</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-bed text-coral text-xs"></i> 2 Queen Bed + Extra</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-bath text-coral text-xs"></i> Bathtub</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-cookie-bite text-coral text-xs"></i> Welcome Snack</div>
+                            <div class="flex items-center gap-2 text-sm text-gray-600"><i class="fas fa-couch text-coral text-xs"></i> Sofa & Ruang Tamu</div>
+                        </div>
+                        <a href="#booking" class="block w-full text-center py-3 rounded-xl border-2 border-coral text-coral font-semibold hover:bg-coral hover:text-white transition-all duration-300">
+                            Booking Kamar Ini
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 4: FASILITAS -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="fasilitas" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Fasilitas</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Fasilitas <span class="gradient-text">Unggulan</span> Kami
+                </h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Semua yang Anda butuhkan untuk tinggal nyaman tersedia lengkap di Mataram Stay Residence.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pool -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1572331165267-854da2b021b1?w=600&q=80" alt="Kolam Renang" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">🏊</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">Kolam Renang</h3>
+                        <p class="text-gray-500 text-sm mt-2">Kolam renang bersih dengan air jernih, dikelilingi taman tropis. Buka setiap hari 06.00 - 21.00 WITA.</p>
+                    </div>
+                </div>
+                <!-- WiFi -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="WiFi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">📶</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">WiFi Super Cepat 100 Mbps</h3>
+                        <p class="text-gray-500 text-sm mt-2">Internet fiber optic kecepatan tinggi di seluruh area. Cocok untuk WFH, streaming, dan gaming.</p>
+                    </div>
+                </div>
+                <!-- Security -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80" alt="Security" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">🔒</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">Keamanan 24 Jam + CCTV</h3>
+                        <p class="text-gray-500 text-sm mt-2">Petugas keamanan standby 24 jam, akses kartu kamar, dan CCTV di seluruh area publik.</p>
+                    </div>
+                </div>
+                <!-- Parking -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=600&q=80" alt="Parking" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">🅿️</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">Parkir Luas & Aman</h3>
+                        <p class="text-gray-500 text-sm mt-2">Area parkir tertutup untuk motor dan mobil. Tertata rapi dengan akses mudah dari jalan utama.</p>
+                    </div>
+                </div>
+                <!-- Laundry -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=80" alt="Laundry" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">🧺</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">Laundry Service</h3>
+                        <p class="text-gray-500 text-sm mt-2">Layanan laundry harian dengan mesin cuci modern. Antar-jemput laundry ke kamar Anda.</p>
+                    </div>
+                </div>
+                <!-- Kitchen -->
+                <div class="group rounded-3xl overflow-hidden shadow-lg card-hover bg-white" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="text-3xl">🍳</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-heading text-lg font-bold text-gray-900">Dapur Bersama & Kantin</h3>
+                        <p class="text-gray-500 text-sm mt-2">Dapur bersama lengkap dengan peralatan masak. Kantin tersedia dengan menu masakan lokal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 5: LOKASI -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="lokasi" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Lokasi</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Lokasi <span class="gradient-text">Strategis</span> di Pusat Mataram
+                </h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Map -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-right">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63164.87791543028!2d116.07!3d-8.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcd8a0e3c7b3b3b%3A0x3b3b3b3b3b3b3b3b!2sMataram%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1600000000000!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="w-full"></iframe>
+                </div>
+                <!-- Info -->
+                <div data-aos="fade-left">
+                    <div class="flex items-start gap-4 mb-8">
+                        <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl font-bold text-gray-900">Alamat Lengkap</h3>
+                            <p class="text-gray-600 mt-1">Jl. Pejanggik No. 88, Cakranegara,<br>Kota Mataram, NTB 83231</p>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-lg font-bold text-gray-900 mb-4">Jarak ke Landmark Terdekat:</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">🕌</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">Islamic Center NTB</div>
+                                <div class="text-sm text-gray-400">Masjid Raya Hubbul Wathan</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">5 menit</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">🏫</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">Universitas Mataram (UNRAM)</div>
+                                <div class="text-sm text-gray-400">Kampus utama</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">10 menit</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">🛒</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">Mataram Mall / Epicentrum</div>
+                                <div class="text-sm text-gray-400">Pusat perbelanjaan</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">7 menit</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">✈️</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">Bandara Internasional Lombok</div>
+                                <div class="text-sm text-gray-400">LIA, Praya</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">45 menit</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">🏖️</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">Pantai Senggigi</div>
+                                <div class="text-sm text-gray-400">Destinasi wisata populer</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">25 menit</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm card-hover">
+                            <span class="text-2xl">🏥</span>
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-800">RSUD NTB</div>
+                                <div class="text-sm text-gray-400">Rumah sakit umum daerah</div>
+                            </div>
+                            <span class="gradient-bg text-white px-3 py-1 rounded-full text-sm font-bold">8 menit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 6: TESTIMONI -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="testimoni" class="py-24 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-40 h-40 border-2 border-white rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border-2 border-white rounded-full"></div>
+            <div class="absolute top-1/2 left-1/3 w-20 h-20 border-2 border-white rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-white/80 font-semibold text-sm tracking-widest uppercase">Testimoni</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-white">
+                    Apa Kata <span class="text-yellow-200">Tamu Kami</span>?
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/95 backdrop-blur rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">
+                        "Tempat kost terbaik di Mataram! Kamarnya bersih, WiFi kencang, dan pemiliknya sangat ramah. Cocok banget buat mahasiswa seperti saya."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sari" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+                        <div>
+                            <div class="font-bold text-gray-900">Sari Dewi</div>
+                            <div class="text-sm text-gray-400">Mahasiswa UNRAM</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white/95 backdrop-blur rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">
+                        "Kami menginap 3 malam saat liburan ke Lombok. Fasilitasnya luar biasa, kolam renangnya bersih, anak-anak senang sekali! Pasti kembali lagi."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Budi" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+                        <div>
+                            <div class="font-bold text-gray-900">Budi Hartono</div>
+                            <div class="text-sm text-gray-400">Wisatawan Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white/95 backdrop-blur rounded-3xl p-8 shadow-xl card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed mb-6">
+                        "Lokasi strategis, dekat kemana-mana. Harga sangat worth it untuk fasilitas yang didapat. Coworking space-nya juga nyaman buat kerja remote."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Andi" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
+                        <div>
+                            <div class="font-bold text-gray-900">Andi Pratama</div>
+                            <div class="text-sm text-gray-400">Digital Nomad</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 7: BOOKING -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="booking" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Reservasi</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Booking <span class="gradient-text">Online</span>
+                </h2>
+                <p class="text-gray-500 mt-4">Isi form di bawah untuk memesan kamar. Kami akan konfirmasi via WhatsApp.</p>
+            </div>
+            <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 lg:p-12" data-aos="fade-up">
+                <form id="bookingForm" onsubmit="handleBooking(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Nama -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-user text-coral mr-1"></i> Nama Lengkap</label>
+                            <input type="text" required placeholder="Masukkan nama lengkap" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- No WA -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fab fa-whatsapp text-green-500 mr-1"></i> No. WhatsApp</label>
+                            <input type="tel" required placeholder="08xx-xxxx-xxxx" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-envelope text-coral mr-1"></i> Email</label>
+                            <input type="email" required placeholder="email@contoh.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- Tipe Kamar -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-bed text-coral mr-1"></i> Tipe Kamar</label>
+                            <select id="roomType" onchange="calculatePrice()" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                                <option value="">— Pilih Tipe Kamar —</option>
+                                <option value="150000">Standard Room — Rp150.000/malam</option>
+                                <option value="250000">Deluxe Room — Rp250.000/malam</option>
+                                <option value="400000">Premium Suite — Rp400.000/malam</option>
+                                <option value="500000">Family Room — Rp500.000/malam</option>
+                            </select>
+                        </div>
+                        <!-- Check-in -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-calendar-alt text-coral mr-1"></i> Check-in</label>
+                            <input type="date" id="checkIn" onchange="calculatePrice()" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- Check-out -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-calendar-alt text-coral mr-1"></i> Check-out</label>
+                            <input type="date" id="checkOut" onchange="calculatePrice()" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- Jumlah Tamu -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-users text-coral mr-1"></i> Jumlah Tamu</label>
+                            <input type="number" min="1" max="10" value="1" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                        </div>
+                        <!-- Metode Bayar -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-credit-card text-coral mr-1"></i> Metode Pembayaran</label>
+                            <select required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                                <option value="">— Pilih Metode —</option>
+                                <option>Transfer Bank (BCA/BRI/Mandiri)</option>
+                                <option>GoPay</option>
+                                <option>OVO</option>
+                                <option>DANA</option>
+                                <option>Bayar di Tempat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Permintaan Khusus -->
+                    <div class="mt-6">
+                        <label class="block text-sm font-semibold text-gray-700 mb-2"><i class="fas fa-comment text-coral mr-1"></i> Permintaan Khusus (Opsional)</label>
+                        <textarea rows="3" placeholder="Contoh: Kamar di lantai 2, extra bed, dsb." class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition resize-none"></textarea>
+                    </div>
+                    <!-- Price Summary -->
+                    <div id="priceSummary" class="mt-6 p-6 rounded-2xl bg-gradient-to-r from-cream to-orange-50 border border-gold/30 hidden">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-600">Harga per malam:</span>
+                            <span class="font-semibold" id="pricePerNight">Rp 0</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-600">Jumlah malam:</span>
+                            <span class="font-semibold" id="totalNights">0 malam</span>
+                        </div>
+                        <div class="border-t border-gold/30 my-3"></div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-heading text-lg font-bold text-gray-900">Total Harga:</span>
+                            <span class="font-heading text-2xl font-bold gradient-text" id="totalPrice">Rp 0</span>
+                        </div>
+                    </div>
+                    <!-- Submit -->
+                    <button type="submit" class="w-full mt-8 gradient-bg text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-gold/30 transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Konfirmasi Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="bookingModal" class="booking-modal fixed inset-0 z-50 items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform">
+            <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-white text-3xl"></i>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-2">Booking Berhasil! 🎉</h3>
+            <p class="text-gray-500 mb-4">Terima kasih telah memesan di Mataram Stay Residence.</p>
+            <div class="bg-cream rounded-xl p-4 mb-6">
+                <div class="text-sm text-gray-500">Nomor Booking Anda:</div>
+                <div class="font-heading text-2xl font-bold gradient-text" id="bookingNumber">MSR-2026-XXXX</div>
+            </div>
+            <p class="text-sm text-gray-500 mb-6">Kami akan mengirim konfirmasi detail via WhatsApp dalam 5 menit.</p>
+            <button onclick="closeModal()" class="gradient-bg text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 8: GALERI -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="galeri" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Galeri</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Galeri <span class="gradient-text">Foto</span>
+                </h2>
+                <p class="text-gray-500 mt-4">Intip suasana Mataram Stay Residence melalui galeri foto kami.</p>
+            </div>
+            <div class="masonry-grid" data-aos="fade-up">
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Exterior" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard Room" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:300px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1572331165267-854da2b021b1?w=600&q=80" alt="Pool" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&q=80" alt="Deluxe Room" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:280px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80" alt="Lobby" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d955f4e24?w=600&q=80" alt="Suite" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:320px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Pool View" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Family Room" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:260px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80" alt="Night View" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Kitchen" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:280px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Workspace" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                <div class="group cursor-pointer relative overflow-hidden rounded-2xl" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&q=80" alt="Bathroom" class="w-full object-cover rounded-2xl group-hover:scale-110 transition-transform duration-500" style="height:300px;">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition z-10"><i class="fas fa-times"></i></button>
+        <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl shadow-2xl">
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 9: BLOG (Simplified) -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Blog</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Tips & Info <span class="gradient-text">Mataram & Lombok</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=600&q=80" alt="Wisata Lombok" class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs gradient-bg text-white px-3 py-1 rounded-full font-semibold">Wisata</span>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2 group-hover:text-coral transition">10 Tempat Wisata Wajib di Lombok</h3>
+                        <p class="text-gray-500 text-sm">Dari Pantai Tanjung Aan hingga Gunung Rinjani, jelajahi keindahan pulau seribu masjid...</p>
+                        <a href="#" class="inline-block mt-4 text-coral font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80" alt="Kuliner" class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs gradient-bg text-white px-3 py-1 rounded-full font-semibold">Kuliner</span>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2 group-hover:text-coral transition">Kuliner Khas Mataram Wajib Coba</h3>
+                        <p class="text-gray-500 text-sm">Ayam Taliwang, Plecing Kangkung, hingga Sate Bulayak. Panduan lengkap kuliner Lombok...</p>
+                        <a href="#" class="inline-block mt-4 text-coral font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg card-hover border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Tips Kost" class="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs gradient-bg text-white px-3 py-1 rounded-full font-semibold">Tips</span>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mt-3 mb-2 group-hover:text-coral transition">Tips Memilih Kost untuk Mahasiswa</h3>
+                        <p class="text-gray-500 text-sm">Panduan lengkap memilih kost yang tepat di Mataram untuk mahasiswa baru UNRAM dan kampus lainnya...</p>
+                        <a href="#" class="inline-block mt-4 text-coral font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SECTION 10: KONTAK & FOOTER -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="kontak" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="gradient-text font-semibold text-sm tracking-widest uppercase">Hubungi Kami</span>
+                <h2 class="font-heading text-4xl lg:text-5xl font-bold mt-3 text-gray-900">
+                    Ada <span class="gradient-text">Pertanyaan</span>?
+                </h2>
+                <p class="text-gray-500 mt-4">Tim kami siap membantu Anda 24/7.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div data-aos="fade-right">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md card-hover">
+                            <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Alamat</h4>
+                                <p class="text-gray-500 text-sm mt-1">Jl. Pejanggik No. 88, Cakranegara, Kota Mataram, NTB 83231</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md card-hover">
+                            <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-whatsapp text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">WhatsApp</h4>
+                                <p class="text-gray-500 text-sm mt-1">+62 812-3456-7890</p>
+                                <a href="https://wa.me/6281234567890" target="_blank" class="inline-block mt-2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-600 transition">
+                                    <i class="fab fa-whatsapp mr-1"></i> Chat Langsung
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md card-hover">
+                            <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Telepon</h4>
+                                <p class="text-gray-500 text-sm mt-1">+62 370-123-456</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md card-hover">
+                            <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-500 text-sm mt-1">info@mataramstay.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md card-hover">
+                            <div class="w-14 h-14 gradient-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Jam Operasional</h4>
+                                <p class="text-gray-500 text-sm mt-1">Resepsionis 24 Jam | Check-in: 14.00 | Check-out: 12.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
+                        <h3 class="font-heading text-2xl font-bold text-gray-900 mb-6">Kirim Pesan</h3>
+                        <form class="space-y-5">
+                            <div>
+                                <input type="text" placeholder="Nama Lengkap" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Subjek" class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition">
+                            </div>
+                            <div>
+                                <textarea rows="5" placeholder="Pesan Anda..." required class="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-coral transition resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full gradient-bg text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:shadow-gold/30 transition-all duration-300 transform hover:scale-[1.02]">
+                                <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                            <i class="fas fa-hotel text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-xl">Mataram Stay</span>
+                            <span class="block text-[10px] text-white/50 tracking-widest uppercase">Residence</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed">Kost eksklusif & penginapan terbaik dengan fasilitas bintang lima di jantung kota Mataram, NTB.</p>
+                    <!-- Social Media -->
+                    <div class="flex gap-3 mt-6">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-coral transition-colors"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-green-500 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Menu</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beranda" class="text-white/60 hover:text-gold transition text-sm">Beranda</a></li>
+                        <li><a href="#tentang" class="text-white/60 hover:text-gold transition text-sm">Tentang Kami</a></li>
+                        <li><a href="#kamar" class="text-white/60 hover:text-gold transition text-sm">Tipe Kamar</a></li>
+                        <li><a href="#fasilitas" class="text-white/60 hover:text-gold transition text-sm">Fasilitas</a></li>
+                        <li><a href="#galeri" class="text-white/60 hover:text-gold transition text-sm">Galeri</a></li>
+                        <li><a href="#booking" class="text-white/60 hover:text-gold transition text-sm">Booking</a></li>
+                    </ul>
+                </div>
+                <!-- Kamar -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Tipe Kamar</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#kamar" class="text-white/60 hover:text-gold transition text-sm">Standard Room</a></li>
+                        <li><a href="#kamar" class="text-white/60 hover:text-gold transition text-sm">Deluxe Room</a></li>
+                        <li><a href="#kamar" class="text-white/60 hover:text-gold transition text-sm">Premium Suite</a></li>
+                        <li><a href="#kamar" class="text-white/60 hover:text-gold transition text-sm">Family Room</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4">Kontak</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-white/60 text-sm"><i class="fas fa-map-marker-alt text-coral mt-1"></i> Jl. Pejanggik No. 88, Mataram, NTB</li>
+                        <li class="flex items-start gap-2 text-white/60 text-sm"><i class="fas fa-phone text-coral mt-1"></i> +62 370-123-456</li>
+                        <li class="flex items-start gap-2 text-white/60 text-sm"><i class="fab fa-whatsapp text-coral mt-1"></i> +62 812-3456-7890</li>
+                        <li class="flex items-start gap-2 text-white/60 text-sm"><i class="fas fa-envelope text-coral mt-1"></i> info@mataramstay.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">© 2026 Mataram Stay Residence. All Rights Reserved.</p>
+                <p class="text-white/40 text-sm">Made with ❤️ in Lombok, NTB</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FLOATING ELEMENTS -->
+    <!-- ═══════════════════════════════════════ -->
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-40 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl wa-float hover:bg-green-600 transition-colors group">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+        <span class="absolute right-20 bg-white text-gray-800 text-sm font-semibold px-4 py-2 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chat WhatsApp</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 z-40 w-12 h-12 gradient-bg rounded-full flex items-center justify-center shadow-xl opacity-0 translate-y-10 transition-all duration-300 hover:shadow-2xl hover:scale-110">
+        <i class="fas fa-chevron-up text-white"></i>
+    </button>
+
+    <!-- Social Proof Popup -->
+    <div id="socialProof" class="fixed bottom-24 left-6 z-40 bg-white rounded-2xl shadow-2xl p-4 max-w-xs hidden">
+        <div class="flex items-center gap-3">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&q=80" class="w-10 h-10 rounded-full object-cover" alt="">
+            <div>
+                <p class="text-sm font-semibold text-gray-800" id="proofName">Sari baru saja booking</p>
+                <p class="text-xs text-gray-400" id="proofDetail">Deluxe Room — 5 menit lalu</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- JAVASCRIPT -->
+    <!-- ═══════════════════════════════════════ -->
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true, offset: 100 });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const navBrand = document.getElementById('nav-brand');
+        const navTagline = document.getElementById('nav-tagline');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('navbar-scrolled');
+                navBrand.classList.remove('text-white');
+                navBrand.classList.add('text-gray-900');
+                navTagline.classList.remove('text-white/70');
+                navTagline.classList.add('text-gray-400');
+                navLinks.forEach(l => { l.classList.remove('text-white/90'); l.classList.add('text-gray-700'); });
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+                navBrand.classList.add('text-white');
+                navBrand.classList.remove('text-gray-900');
+                navTagline.classList.add('text-white/70');
+                navTagline.classList.remove('text-gray-400');
+                navLinks.forEach(l => { l.classList.add('text-white/90'); l.classList.remove('text-gray-700'); });
+            }
+
+            // Back to top button
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                btn.classList.remove('opacity-0', 'translate-y-10');
+                btn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                btn.classList.add('opacity-0', 'translate-y-10');
+                btn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Mobile menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 6 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                particle.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        counter.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + '+';
+                    }
+                }, 16);
+            });
+        }
+
+        // Trigger counter on scroll
+        const counterSection = document.getElementById('tentang');
+        let counterTriggered = false;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterTriggered) {
+                    counterTriggered = true;
+                    animateCounters();
+                }
+            });
+        }, { threshold: 0.3 });
+        observer.observe(counterSection);
+
+        // Price calculation
+        function calculatePrice() {
+            const roomType = document.getElementById('roomType').value;
+            const checkIn = document.getElementById('checkIn').value;
+            const checkOut = document.getElementById('checkOut').value;
+            const summary = document.getElementById('priceSummary');
+
+            if (roomType && checkIn && checkOut) {
+                const startDate = new Date(checkIn);
+                const endDate = new Date(checkOut);
+                const nights = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+
+                if (nights > 0) {
+                    const price = parseInt(roomType);
+                    const total = price * nights;
+                    document.getElementById('pricePerNight').textContent = 'Rp ' + price.toLocaleString('id-ID');
+                    document.getElementById('totalNights').textContent = nights + ' malam';
+                    document.getElementById('totalPrice').textContent = 'Rp ' + total.toLocaleString('id-ID');
+                    summary.classList.remove('hidden');
+                }
+            }
+        }
+
+        // Booking form
+        function handleBooking(e) {
+            e.preventDefault();
+            const bookingNum = 'MSR-2026-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('bookingNumber').textContent = bookingNum;
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+        }
+
+        // Lightbox
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Social proof popup
+        const proofData = [
+            { name: 'Sari baru saja booking', detail: 'Deluxe Room — 5 menit lalu', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&q=80' },
+            { name: 'Budi booking Family Room', detail: 'Family Room — 12 menit lalu', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&q=80' },
+            { name: 'Andi booking Premium Suite', detail: 'Premium Suite — 18 menit lalu', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&q=80' },
+        ];
+        let proofIndex = 0;
+        function showSocialProof() {
+            const popup = document.getElementById('socialProof');
+            const data = proofData[proofIndex % proofData.length];
+            document.getElementById('proofName').textContent = data.name;
+            document.getElementById('proofDetail').textContent = data.detail;
+            popup.querySelector('img').src = data.img;
+            popup.classList.remove('hidden');
+            popup.classList.add('social-proof');
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                popup.classList.remove('social-proof');
+            }, 5000);
+            proofIndex++;
+        }
+        setTimeout(showSocialProof, 8000);
+        setInterval(showSocialProof, 15000);
+
+        // Set minimum date for date inputs
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(input => {
+            input.setAttribute('min', today);
+        });
+    </script>
+</body>
+</html>
